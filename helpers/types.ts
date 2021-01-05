@@ -24,6 +24,10 @@ export enum AavePools {
   proto = 'proto',
 }
 
+export enum SetPools {
+  proto = 'proto',
+}
+
 export enum eContractid {
   Example = 'Example',
   LendingPoolAddressesProvider = 'LendingPoolAddressesProvider',
@@ -200,6 +204,7 @@ export interface iAssetBase<T> {
   USD: T;
   REN: T;
   ENJ: T;
+  DPI: T;
 }
 
 export type iAssetsWithoutETH<T> = Omit<iAssetBase<T>, 'ETH'>;
@@ -230,6 +235,15 @@ export type iAavePoolAssets<T> = Pick<
   | 'ENJ'
 >;
 
+export type iSetPoolAssets<T> = Pick<
+  iAssetsWithoutUSD<T>,
+  | 'DAI'
+  | 'USDC'
+  | 'USDT'
+  | 'WETH'
+  | 'DPI'
+>;
+
 export type iMultiPoolsAssets<T> = iAssetCommon<T> | iAavePoolAssets<T>;
 
 export type iAavePoolTokens<T> = Omit<iAavePoolAssets<T>, 'ETH'>;
@@ -258,6 +272,7 @@ export enum TokenContractId {
   YFI = 'YFI',
   UNI = 'UNI',
   ENJ = 'ENJ',
+  DPI = 'DPI',
 }
 
 export interface IReserveParams extends IReserveBorrowParams, IReserveCollateralParams {
@@ -371,6 +386,9 @@ export interface ICommonConfiguration {
 
 export interface IAaveConfiguration extends ICommonConfiguration {
   ReservesConfig: iAavePoolAssets<IReserveParams>;
+}
+export interface ISetConfiguration extends ICommonConfiguration {
+  ReservesConfig: iSetPoolAssets<IReserveParams>;
 }
 export interface ITokenAddress {
   [token: string]: tEthereumAddress;

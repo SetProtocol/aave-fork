@@ -37,6 +37,8 @@
     "aave:fork:main": "npm run compile && MAINNET_FORK=true  hardhat aave:mainnet",
     "aave:main:full:migration": "npm run compile && npm run hardhat:main -- aave:mainnet --verify",
     "aave:main:full:initialize": "npm run compile && MAINNET_FORK=true full:initialize-tokens --pool Aave",
+    "set:evm:dev:migration": "npm run compile && hardhat set:dev",
+    "set:fork:main": "npm run compile && MAINNET_FORK=true hardhat set:mainnet",
     "dev:prettier": "prettier --write .",
     "ci:test": "npm run compile && npm run test",
     "ci:clean": "rm -rf ./artifacts ./cache ./types",
