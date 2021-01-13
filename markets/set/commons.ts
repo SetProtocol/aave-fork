@@ -14,6 +14,10 @@ const MOCK_CHAINLINK_AGGREGATORS_PRICES = {
   MANA: oneEther.multipliedBy('0.000158').toFixed(),
   MKR: oneEther.multipliedBy('2.508581').toFixed(),
   REN: oneEther.multipliedBy('0.00065133').toFixed(),
+  SetDAI: oneEther.multipliedBy('0.00369068412860').toFixed(),
+  SetUSDC: oneEther.multipliedBy('0.00369068412860').toFixed(),
+  SetUSDT: oneEther.multipliedBy('0.00369068412860').toFixed(),
+  SetWETH: oneEther.toFixed(),
   SNX: oneEther.multipliedBy('0.00442616').toFixed(),
   SUSD: oneEther.multipliedBy('0.00364714136416').toFixed(),
   TUSD: oneEther.multipliedBy('0.00364714136416').toFixed(),
@@ -61,6 +65,15 @@ export const CommonsConfig: ICommonConfiguration = {
     },
     DPI: {
       borrowRate: oneRay.multipliedBy(0.039).toFixed(),
+    },
+    SetDAI: {
+      borrowRate: oneRay.multipliedBy(0.039).toFixed(),
+    },
+    SetUSDC: {
+      borrowRate: oneRay.multipliedBy(0.039).toFixed(),
+    },
+    SetUSDT: {
+      borrowRate: oneRay.multipliedBy(0.035).toFixed(),
     },
     USDC: {
       borrowRate: oneRay.multipliedBy(0.039).toFixed(),
@@ -156,6 +169,9 @@ export const CommonsConfig: ICommonConfiguration = {
     [EthereumNetwork.kovan]: {
       DAI: '0x22B58f1EbEDfCA50feF632bD73368b2FdA96D541',
       DPI: '',
+      SetDAI: '0x22B58f1EbEDfCA50feF632bD73368b2FdA96D541',
+      SetUSDC: '0x64EaC61A2DFda2c3Fa04eED49AA33D021AeC8838',
+      SetUSDT: '0x0bF499444525a23E7Bb61997539725cA2e928138',
       USDC: '0x64EaC61A2DFda2c3Fa04eED49AA33D021AeC8838',
       USDT: '0x0bF499444525a23E7Bb61997539725cA2e928138',
       USD: '0x9326BFA02ADD2366b30bacB125260Af641031331',
@@ -163,6 +179,9 @@ export const CommonsConfig: ICommonConfiguration = {
     [EthereumNetwork.ropsten]: {
       DAI: '0x64b8e49baded7bfb2fd5a9235b2440c0ee02971b',
       DPI: ZERO_ADDRESS,
+      SetDAI: '0x64b8e49baded7bfb2fd5a9235b2440c0ee02971b',
+      SetUSDC: '0xe1480303dde539e2c241bdc527649f37c9cbef7d',
+      SetUSDT: '0xc08fe0c4d97ccda6b40649c6da621761b628c288',
       USDC: '0xe1480303dde539e2c241bdc527649f37c9cbef7d',
       USDT: '0xc08fe0c4d97ccda6b40649c6da621761b628c288',
       USD: '0x8468b2bDCE073A157E560AA4D9CcF6dB1DB98507',
@@ -170,6 +189,9 @@ export const CommonsConfig: ICommonConfiguration = {
     [EthereumNetwork.main]: {
       DAI: '0x773616E4d11A78F511299002da57A0a94577F1f4',
       DPI: '0xD2A593BF7594aCE1faD597adb697b5645d5edDB2',
+      SetDAI: '0x773616E4d11A78F511299002da57A0a94577F1f4',
+      SetUSDC: '0x986b5E1e1755e3C2440e960477f25201B0a8bbD4',
+      SetUSDT: '0xEe9F2375b4bdF6387aa8265dD4FB8F16512A1d46',
       USDC: '0x986b5E1e1755e3C2440e960477f25201B0a8bbD4',
       USDT: '0xEe9F2375b4bdF6387aa8265dD4FB8F16512A1d46',
       USD: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419',
@@ -177,6 +199,9 @@ export const CommonsConfig: ICommonConfiguration = {
     [EthereumNetwork.tenderlyMain]: {
       DAI: '0x773616E4d11A78F511299002da57A0a94577F1f4',
       DPI: '0xD2A593BF7594aCE1faD597adb697b5645d5edDB2',
+      SetDAI: '0x773616E4d11A78F511299002da57A0a94577F1f4',
+      SetUSDC: '0x986b5E1e1755e3C2440e960477f25201B0a8bbD4',
+      SetUSDT: '0xEe9F2375b4bdF6387aa8265dD4FB8F16512A1d46',
       USDC: '0x986b5E1e1755e3C2440e960477f25201B0a8bbD4',
       USDT: '0xEe9F2375b4bdF6387aa8265dD4FB8F16512A1d46',
       USD: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419',

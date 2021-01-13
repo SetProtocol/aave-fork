@@ -205,6 +205,10 @@ export interface iAssetBase<T> {
   REN: T;
   ENJ: T;
   DPI: T;
+  SetDAI: T;
+  SetUSDC: T;
+  SetUSDT: T;
+  SetWETH: T;
 }
 
 export type iAssetsWithoutETH<T> = Omit<iAssetBase<T>, 'ETH'>;
@@ -237,10 +241,10 @@ export type iAavePoolAssets<T> = Pick<
 
 export type iSetPoolAssets<T> = Pick<
   iAssetsWithoutUSD<T>,
-  | 'DAI'
-  | 'USDC'
-  | 'USDT'
-  | 'WETH'
+  | 'SetDAI'
+  | 'SetUSDC'
+  | 'SetUSDT'
+  | 'SetWETH'
   | 'DPI'
 >;
 
