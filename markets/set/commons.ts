@@ -36,7 +36,7 @@ const MOCK_CHAINLINK_AGGREGATORS_PRICES = {
 
 export const CommonsConfig: ICommonConfiguration = {
   MarketId: 'Commons',
-  ProviderId: 1,
+  ProviderId: 2,
   ProtocolGlobalParams: {
     TokenDistributorPercentageBase: '10000',
     MockUsdPriceInWei: '5848466240000000',
@@ -150,8 +150,8 @@ export const CommonsConfig: ICommonConfiguration = {
     [eEthereumNetwork.buidlerevm]: '',
     [EthereumNetwork.kovan]: '0xB8bE51E6563BB312Cbb2aa26e352516c25c26ac1',
     [EthereumNetwork.ropsten]: ZERO_ADDRESS,
-    [EthereumNetwork.main]: '0xA50ba011c48153De246E5192C8f9258A2ba79Ca9',
-    [EthereumNetwork.tenderlyMain]: '0xA50ba011c48153De246E5192C8f9258A2ba79Ca9',
+    [EthereumNetwork.main]: '',
+    [EthereumNetwork.tenderlyMain]: '',
   },
   FallbackOracle: {
     [eEthereumNetwork.coverage]: '',

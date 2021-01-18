@@ -16,8 +16,8 @@ import {
 
 export const SetConfig: ISetConfiguration = {
   ...CommonsConfig,
-  MarketId: 'Aave genesis market',
-  ProviderId: 1,
+  MarketId: 'Set market',
+  ProviderId: 2,
   ReservesConfig: {
     SetDAI: strategyDAI,
     DPI: strategyDPI,

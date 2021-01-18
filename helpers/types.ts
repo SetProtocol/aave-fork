@@ -22,10 +22,7 @@ export enum EthereumNetworkNames {
 
 export enum AavePools {
   proto = 'proto',
-}
-
-export enum SetPools {
-  proto = 'proto',
+  set = 'set'
 }
 
 export enum eContractid {
