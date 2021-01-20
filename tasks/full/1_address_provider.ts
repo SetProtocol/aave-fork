@@ -75,7 +75,7 @@ task(
     const addressesProviderRegistry = (
       await getLendingPoolAddressesProviderRegistry(providerRegistryAddress)
     ).connect(signer);
-    console.log(await signer.getAddress());
+
     console.log('Registry Address', addressesProviderRegistry.address);
 
     // 2. Deploy address provider and set genesis manager

@@ -249,7 +249,7 @@ export const initReservesByHelper = async (
   const chunkedRates = chunk(deployedRates, initChunks);
   const chunkedDecimals = chunk(reserveInitDecimals, initChunks);
   const chunkedSymbols = chunk(reserveSymbols, initChunks);
-  console.log(chunkedAtokens, chunkedSymbols);
+
   console.log(`- Reserves initialization in ${chunkedStableTokens.length} txs`);
   for (let chunkIndex = 0; chunkIndex < chunkedDecimals.length; chunkIndex++) {
     const tx3 = await waitForTx(
