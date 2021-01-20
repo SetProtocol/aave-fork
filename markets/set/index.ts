@@ -31,7 +31,7 @@ export const SetConfig: ISetConfiguration = {
     [eEthereumNetwork.coverage]: {},
     [EthereumNetwork.kovan]: {
       SetDAI: '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD',
-      DPI: '',
+      DPI: '0xEA41F11c916813EDa966a4e1a0b09c98C4bbC555',
       SetUSDC: '0xe22da380ee6B445bb8273C81944ADEB6E8450422',
       SetUSDT: '0x13512979ADE267AB5100878E2e0f485B568328a4',
       SetWETH: '0xd0a1e359811322d97991e03f863a0c30c2cf029c',
