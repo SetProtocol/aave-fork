@@ -57,7 +57,7 @@ const LENDING_RATE_ORACLE_RATES_COMMON = AaveConfig.LendingRateOracleRatesCommon
 const deployAllMockTokens = async (deployer: Signer) => {
   const tokens: { [symbol: string]: MockContract | MintableERC20 | WETH9Mocked } = {};
 
-  const protoConfigData = getReservesConfigByPool(AavePools.proto);
+  const protoConfigData = getReservesConfigByPool(AavePools.proto, AaveConfig);
 
   for (const tokenSymbol of Object.keys(TokenContractId)) {
     if (tokenSymbol === 'WETH') {
@@ -141,6 +141,7 @@ const buildTestEnv = async (deployer: Signer, secondaryWallet: Signer) => {
     {
       WETH: mockTokens.WETH.address,
       DAI: mockTokens.DAI.address,
+      DPI: mockTokens.DPI.address,
       TUSD: mockTokens.TUSD.address,
       USDC: mockTokens.USDC.address,
       USDT: mockTokens.USDT.address,
@@ -200,7 +201,7 @@ const buildTestEnv = async (deployer: Signer, secondaryWallet: Signer) => {
     aaveAdmin
   );
 
-  const reservesParams = getReservesConfigByPool(AavePools.proto);
+  const reservesParams = getReservesConfigByPool(AavePools.proto, AaveConfig);
 
   const testHelpers = await deployAaveProtocolDataProvider(addressesProvider.address);
 
@@ -242,7 +243,7 @@ before(async () => {
   const MAINNET_FORK = process.env.MAINNET_FORK === 'true';
 
   if (MAINNET_FORK) {
-    await rawBRE.run('aave:mainnet');
+    await rawBRE.run('set:mainnet');
   } else {
     console.log('-> Deploying test environment...');
     await buildTestEnv(deployer, secondaryWallet);

@@ -8,6 +8,7 @@ import {
 } from './types';
 import { getParamPerPool } from './contracts-helpers';
 import AaveConfig from '../markets/aave';
+import SetConfig from '../markets/set';
 import { CommonsConfig } from '../markets/aave/commons';
 import { DRE, filterMapBy } from './misc-utils';
 import { tEthereumAddress } from './types';
@@ -18,12 +19,15 @@ export enum ConfigNames {
   Commons = 'Commons',
   Aave = 'Aave',
   Uniswap = 'Uniswap',
+  Set = 'Set'
 }
 
 export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
   switch (configName) {
     case ConfigNames.Aave:
       return AaveConfig;
+    case ConfigNames.Set:
+      return SetConfig;
     case ConfigNames.Commons:
       return CommonsConfig;
     default:
@@ -35,11 +39,11 @@ export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
 // PROTOCOL PARAMS PER POOL
 // ----------------
 
-export const getReservesConfigByPool = (pool: AavePools): iMultiPoolsAssets<IReserveParams> =>
+export const getReservesConfigByPool = (pool: AavePools, config: PoolConfiguration): iMultiPoolsAssets<IReserveParams> =>
   getParamPerPool<iMultiPoolsAssets<IReserveParams>>(
     {
       [AavePools.proto]: {
-        ...AaveConfig.ReservesConfig,
+        ...config.ReservesConfig,
       },
     },
     pool

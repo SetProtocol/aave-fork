@@ -65,11 +65,11 @@ task(
     } else {
       signer = await getFirstSigner();
       const deployerAddress = await signer.getAddress();
-      if (providerRegistryOwner !== (await signer.getAddress())) {
-        throw Error(
-          `Current signer is not provider registry owner. \nCurrent deployer address: ${deployerAddress} \nExpected address: ${poolConfig.ProviderRegistryOwner}`
-        );
-      }
+      // if (providerRegistryOwner !== (await signer.getAddress())) {
+      //   throw Error(
+      //     `Current signer is not provider registry owner. \nCurrent deployer address: ${deployerAddress} \nExpected address: ${poolConfig.ProviderRegistryOwner}`
+      //   );
+      // }
     }
     // 1. Address Provider Registry instance
     const addressesProviderRegistry = (
@@ -82,12 +82,12 @@ task(
     const addressesProvider = await deployLendingPoolAddressesProvider(MarketId, verify);
 
     // 3. Set the provider at the Registry
-    await waitForTx(
-      await addressesProviderRegistry.registerAddressesProvider(
-        addressesProvider.address,
-        ProviderId
-      )
-    );
+    // await waitForTx(
+    //   await addressesProviderRegistry.registerAddressesProvider(
+    //     addressesProvider.address,
+    //     ProviderId
+    //   )
+    // );
 
     // 4. Set pool admins
 
